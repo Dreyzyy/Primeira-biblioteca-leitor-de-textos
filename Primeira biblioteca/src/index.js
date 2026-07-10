@@ -1,25 +1,17 @@
-//rodar no terminal com o caminho do arquivo: node src/index.js pasta-mae/arquivos/texto-web.txt
+//node src/cli.js arquivos/texto-web.txt ./resultados
 
-const { log } = require('console');
-const fs = require('fs') //fs = sistema de arquivo do computador, tem seus metodos
-
-
-const caminhoArquivo = process.argv; // Serve para enviar instruções pra o terminal em forma de array!
-const link = caminhoArquivo[2];      //geralmente retorna o caminho do node, do arquivo utilizado e a instrução.
-
-fs.readFile(link, 'utf-8', (erro, texto) => {
-    quebraEmParagrafos(texto);
-})  //caminho-arquivo, sigla pra idioma normal, parametros
-
-function quebraEmParagrafos(texto) {
-    const paragrafos = texto.toLowerCase().split('\n'); //quebra de linha
-    
-    const contagem = paragrafos.map((paragrafo) => { //pra separar corretamente na contagem
+//========== FORMATAR TEXTO ==========
+export function contaPalavras(texto) {
+    const paragrafos = extraiParagrafos(texto)
+    const contagem = paragrafos.flatMap((paragrafo) => {
+        if(!paragrafo) return [];
         return verificarPalavrasDuplicadas(paragrafo); //retorna em array
-    });
+    })
+    return contagem;
+}
 
-    console.log(contagem);
-    
+function extraiParagrafos(texto) {
+    return texto.toLowerCase().split('\n'); //quebra de linha
 }
 
 

@@ -1,0 +1,8 @@
+Nenhuma palavra duplicada no parágrafo 1! 
+Nenhuma palavra duplicada no parágrafo 2! 
+Palavras duplicadas no parágrafo 3: uma 
+Nenhuma palavra duplicada no parágrafo 4! 
+Nenhuma palavra duplicada no parágrafo 5! 
+Nenhuma palavra duplicada no parágrafo 6! 
+Palavras duplicadas no parágrafo 7: dispositivos,web,seu,conectado 
+Palavras duplicadas no parágrafo 8: cliente,uma,para 
